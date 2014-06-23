@@ -20,6 +20,7 @@
     if(!opts.offset_x){ opts.offset_x=0; }
     if(!opts.offset_y){ opts.offset_y=0; }
     if(!opts.delta_y){ opts.delta_y=3; }
+    if(!opts.duration){ opts.duration = 1000; }
     
     $('body').prepend(
       opts.elem = $('<div></div>').css({
@@ -60,7 +61,7 @@
     }).animate({
       top: opts.target_y,
       opacity: 0
-    }, 300, function(){
+    }, opts.duration, function(){
       $(this).remove();
     });
 
